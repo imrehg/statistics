@@ -5,17 +5,14 @@ data a;
 
 proc iml;
 
-beta0=0.5;
-beta1=2;
-beta2=1.5;
-beta3=0.2;
+beta = {0.5 2 1.5 0.2};
 observation=100;
 
-start covariates(x,y);
+start covariates(x,y,beta);
     if (ranuni(0)>0.5) then x[1]=1; else x[1]=0;
     if (ranuni(0)>0.5) then x[2]=1; else x[2]=0;
     if (ranuni(0)>0.5) then x[3]=1; else x[3]=0;
-    y=beta0+beta1*x[1]+beta2*x[2]+beta3*x[3];
+    y=beta[1]+beta[2]*x[1]+beta[3]*x[2]+beta[4]*x[3];
 finish;
 
 dataset= j(observation,4,.);
@@ -23,11 +20,11 @@ dataset= j(observation,4,.);
  
            x = j(1,3,0);
            y = 0;
-           call covariates(x,y);
-           dataset=[i,1]=x[1];
-           dataset=[i,2]=x[2];
-           dataset=[i,3]=x[3];
-           dataset=[i,4]=y;
+           call covariates(x,y,beta);
+           dataset[i,1]=x[1];
+           dataset[i,2]=x[2];
+           dataset[i,3]=x[3];
+           dataset[i,4]=y;
  end;
 
 quit;
