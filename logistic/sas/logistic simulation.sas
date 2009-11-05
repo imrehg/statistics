@@ -12,10 +12,10 @@ beta3=0.2;
 observation=100;
 
 start covariates(x1,x2,x3,y);
-    if (ranuni(0)>0.5) then x1=1; else x1=0;  return(x1);
-    if (ranuni(0)>0.5) then x2=1; else x2=0;  return(x2);
-	if (ranuni(0)>0.5) then x3=1; else x3=0;  return(x3);
-	y=beta0+beta1*x1+beta2*x2+beta3*x3;
+    if (ranuni(0)>0.5) then x1=1; else x1=0;
+    if (ranuni(0)>0.5) then x2=1; else x2=0;
+    if (ranuni(0)>0.5) then x3=1; else x3=0;
+    y=beta0+beta1*x1+beta2*x2+beta3*x3;
 finish;
 
  do i=1 to observation;
