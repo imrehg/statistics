@@ -90,11 +90,3 @@ print n0000 n0001 n0010 n0011 n0100 n0101 n0110 n0111;
 print n1000 n1001 n1010 n1011 n1100 n1101 n1110 n1111;
 run;
 quit;
-
-/*
-data b;
-set a;
-proc logistic  descending;
-model y=x1 x2 x3;
-run;
-*/ 
