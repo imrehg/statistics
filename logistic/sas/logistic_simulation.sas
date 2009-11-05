@@ -58,16 +58,38 @@ set a;
   end;
 
 
-n1111=sum(f1111);
-n1011=sum(f1011);
-n0111=sum(f0111);
-n0011=sum(f0011);
 proc print ;
 run;
 
+proc iml;
+* Calculate sums;
+use b;
 
+read all var {x1 x2 x3 
+              f0000 f0001 f0010 f0011 f0100 f0101 f0110 f0111
+              f1000 f1001 f1010 f1011 f1100 f1101 f1110 f1111};
 
+n0000 = sum(f0000);
+n0001 = sum(f0001);
+n0010 = sum(f0010);
+n0011 = sum(f0011);
+n0100 = sum(f0100);
+n0101 = sum(f0101);
+n0110 = sum(f0110);
+n0111 = sum(f0111);
+n1000 = sum(f1000);
+n1001 = sum(f1001);
+n1010 = sum(f1010);
+n1011 = sum(f1011);
+n1100 = sum(f1100);
+n1101 = sum(f1101);
+n1110 = sum(f1110);
+n1111 = sum(f1111);
 
+print n0000 n0001 n0010 n0011 n0100 n0101 n0110 n0111;
+print n1000 n1001 n1010 n1011 n1100 n1101 n1110 n1111;
+run;
+quit;
 
 /*
 data b;
