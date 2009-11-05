@@ -2,6 +2,7 @@ DM  "log;clear;output;clear;";
 options nodate;
 
 data a;
+* Generate test data;
 beta0=0.5;
 beta1=2;
 beta2=1.5;
@@ -25,6 +26,7 @@ run;
 
 
 data b;
+* Calculate conditional counts;
 set a;
 
   if (x2=1& x3=1) then do;
