@@ -27,36 +27,33 @@ run;
 data b;
 set a;
 
-       if (x2=1& x3=1) then do;
-            if  (y=1 & x1=1)  then f1111=1; else f1111=0;
-            if  (y=1 & x1=0)  then f1011=1; else f1011=0;
-	        if  (y=0 & x1=1)  then f0111=1;  else f0111=0;
-	        if  (y=0 & x1=0)  then f0011=1; else f0011=0;
-	  end;
+  if (x2=1& x3=1) then do;
+    if  (y=1 & x1=1)  then f1111=1; else f1111=0;
+    if  (y=1 & x1=0)  then f1011=1; else f1011=0;
+    if  (y=0 & x1=1)  then f0111=1; else f0111=0;
+    if  (y=0 & x1=0)  then f0011=1; else f0011=0;
+  end;
 
+  if (x2=1& x3=0) then do;
+    if  (y=1 & x1=1)  then f1110=1; else f1110=0;
+    if  (y=1 & x1=0)  then f1010=1; else f1010=0;
+    if  (y=0 & x1=1)  then f0110=1; else f0110=0;
+    if  (y=0 & x1=0)  then f0010=1; else f0010=0;
+  end;
 
-     if (x2=1& x3=0) then do;
-            if  (y=1 & x1=1)  then f1110=1; else f1110=0;
-            if  (y=1 & x1=0)  then f1010=1; else f1010=0;
-	        if  (y=0 & x1=1)  then f0110=1;  else f0110=0;
-	        if  (y=0 & x1=0)  then f0010=1; else f0010=0;
-	  end;
+  if (x2=0 & x3=1) then do;
+    if  (y=1 & x1=1)  then f1101=1; else f1101=0;
+    if  (y=1 & x1=0)  then f1001=1; else f1001=0;
+    if  (y=0 & x1=1)  then f0101=1; else f0101=0;
+    if  (y=0 & x1=0)  then f0001=1; else f0001=0;
+  end;
 
-     if (x2=0 & x3=1) then do;
-            if  (y=1 & x1=1)  then f1101=1; else f1101=0;
-            if  (y=1 & x1=0)  then f1001=1; else f1001=0;
-	        if  (y=0 & x1=1)  then f0101=1;  else f0101=0;
-	        if  (y=0 & x1=0)  then f0001=1; else f0001=0;
-	  end;
-
-
-	       if (x2=0& x3=0) then do;
-            if  (y=1 & x1=1)  then f1100=1; else f1100=0;
-            if  (y=1 & x1=0)  then f1000=1; else f1000=0;
-	        if  (y=0 & x1=1)  then f0100=1;  else f0100=0;
-	        if  (y=0 & x1=0)  then f000=1; else f0000=0;
-	  end;
-
+  if (x2=0& x3=0) then do;
+    if  (y=1 & x1=1)  then f1100=1; else f1100=0;
+    if  (y=1 & x1=0)  then f1000=1; else f1000=0;
+    if  (y=0 & x1=1)  then f0100=1; else f0100=0;
+    if  (y=0 & x1=0)  then f0000=1; else f0000=0;
+  end;
 
 
 n1111=sum(f1111);
