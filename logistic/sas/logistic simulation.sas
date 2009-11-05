@@ -23,10 +23,10 @@ dataset= j(observation,4,.);
  
            x = j(1,3,0);
            y = 0;
-           call covariates(x1,x2,x3,y);
-           dataset=[i,1]=x1;
-           dataset=[i,2]=x2;
-           dataset=[i,3]=x3;
+           call covariates(x,y);
+           dataset=[i,1]=x[1];
+           dataset=[i,2]=x[2];
+           dataset=[i,3]=x[3];
            dataset=[i,4]=y;
  end;
 
