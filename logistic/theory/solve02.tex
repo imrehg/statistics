@@ -1,0 +1,24 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[latin1]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\begin{document}
+
+The equations we try to solve:
+\begin{eqnarray}
+\beta_1 \sigma_{1}^2  - (\sigma_{1y} - \beta_2 \sigma_{12} - \beta_3 \sigma_{13}) = 0\\
+\beta_2 \sigma_{2}^2  - (\sigma_{2y} - \beta_1 \sigma_{12} - \beta_3 \sigma_{23}) = 0\\
+\beta_3 \sigma_{3}^2  - (\sigma_{3y} - \beta_1 \sigma_{13} - \beta_2 \sigma_{23}) = 0
+\end{eqnarray}
+
+The solutions for $\beta_1$, $\beta_2$ and $\beta_3$:
+\begin{eqnarray}
+\beta_1 = \frac{\sigma_{12}\sigma_{23}\sigma_{3y} + \sigma_{13}\sigma_{23}\sigma_{2y} - \sigma_{1y}\sigma_{23}^2 + \sigma_{1y}\sigma_{2}^2\sigma_{3}^2 - \sigma_{12}\sigma_{2y}\sigma_{3}^2 - \sigma_{13}\sigma_{3y}\sigma_{2}^2}{2\sigma_{12}\sigma_{13}\sigma_{23} - \sigma_{1}^2\sigma_{23}^2 - \sigma_{12}^2\sigma_{3}^2 - \sigma_{13}^2\sigma_{2}^2 + \sigma_{1}^2\sigma_{2}^2\sigma_{3}^2} \\
+\beta_2 = \frac{\sigma_{12}\sigma_{13}\sigma_{3y} + \sigma_{13}\sigma_{1y}\sigma_{23} - \sigma_{2y}\sigma_{13}^2 + \sigma_{2y}\sigma_{1}^2\sigma_{3}^2 - \sigma_{12}\sigma_{1y}\sigma_{3}^2 - \sigma_{23}\sigma_{3y}\sigma_{1}^2}{2\sigma_{12}\sigma_{13}\sigma_{23} - \sigma_{1}^2\sigma_{23}^2 - \sigma_{12}^2\sigma_{3}^2 - \sigma_{13}^2\sigma_{2}^2 + \sigma_{1}^2\sigma_{2}^2\sigma_{3}^2} \\
+\beta_3 = \frac{\sigma_{12}\sigma_{13}\sigma_{2y} + \sigma_{12}\sigma_{1y}\sigma_{23} - \sigma_{3y}\sigma_{12}^2 + \sigma_{3y}\sigma_{1}^2\sigma_{2}^2 - \sigma_{13}\sigma_{1y}\sigma_{2}^2 - \sigma_{23}\sigma_{2y}\sigma_{1}^2}{2\sigma_{12}\sigma_{13}\sigma_{23} - \sigma_{1}^2\sigma_{23}^2 - \sigma_{12}^2\sigma_{3}^2 - \sigma_{13}^2\sigma_{2}^2 + \sigma_{1}^2\sigma_{2}^2\sigma_{3}^2}
+\end{eqnarray}
+(Using Python/Sympy)
+
+
+\end{document}
